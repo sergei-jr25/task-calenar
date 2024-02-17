@@ -1,0 +1,4 @@
+ # Исключаем каталоги build и node_modules
+/build
+/node_modules
+node_modules
