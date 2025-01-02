@@ -10,6 +10,7 @@ $primaryOverlayOpacity: #42567a6c;
 		padding: 40px 0;
 	}
 	&__container {
+		overflow-x: hidden;
 		position: relative;
 		height: 100%;
 
@@ -24,7 +25,45 @@ $primaryOverlayOpacity: #42567a6c;
 			border-left: 1px solid $primaryOverlayOpacity;
 			padding: 50px 0px;
 		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			display: block;
+			width: 1px;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			background-color: $primaryOverlayOpacity;
+			transform: translate(20px, 0);
+		}
 	}
+
+	// &__line {
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	top: 0;
+	// 	left: 0;
+
+	// 	&::after {
+	// 		content: '';
+	// 		position: absolute;
+	// 		z-index: 2;
+	// 		display: block;
+	// 		width: 1px;
+	// 		height: 100%;
+	// 		top: 0;
+	// 		left: 50%;
+	// 		background-color: $primaryOverlayOpacity;
+	// 		transform: translate(20px, 0);
+	// 	}
+
+	// 	@media (max-width: $mobile) {
+	// 		display: none;
+	// 	}
+	// }
 
 	&__wrapper {
 		height: 100%;
@@ -89,40 +128,6 @@ $primaryOverlayOpacity: #42567a6c;
 		}
 		@media (max-width: $mobile) {
 			margin: 0px 0px 56px 0px;
-		}
-	}
-
-	&__line {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		&::before,
-		&::after {
-			content: '';
-			position: absolute;
-			z-index: 2;
-			display: block;
-			width: 1px;
-			height: 100%;
-			top: 0;
-			left: 50%;
-			background-color: $primaryOverlayOpacity;
-			transform: translate(20px, 0);
-		}
-		&::before {
-			top: 50%;
-			left: 0;
-			width: 100%;
-			height: 1px;
-			transform: translate(0px, -50px);
-			@media (max-width: $tablet) {
-				transform: translate(0px, 59px);
-			}
-		}
-		@media (max-width: $mobile) {
-			display: none;
 		}
 	}
 
@@ -212,29 +217,18 @@ $primaryOverlayOpacity: #42567a6c;
 	flex: 0 0 500px;
 	margin: 50px auto;
 
-	// &::before,
-	// &::after {
-	// 	content: '';
-	// 	position: absolute;
-	// 	z-index: 2;
-	// 	display: block;
-	// 	width: 1px;
-	// 	height: 4000px;
-	// 	top: 0;
-	// 	left: 50%;
-	// 	transform: translate(0px, -50%);
-	// 	background-color: $primaryOverlayOpacity;
-	// }
-	// &::before {
-	// 	top: 50%;
-	// 	left: 0;
-	// 	width: 4000px;
-	// 	height: 1px;
-	// 	transform: translate(-50%, 0px);
-
-	// 	@media (max-width: $tablet) {
-	// 	}
-	// }
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		display: block;
+		top: 50%;
+		left: 0;
+		width: 200vw;
+		height: 1px;
+		transform: translate(-50%, 0px);
+		background-color: $primaryOverlayOpacity;
+	}
 	@media (max-width: $mobile) {
 		display: none;
 	}

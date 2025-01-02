@@ -90,8 +90,6 @@ const Hero: FC = () => {
 	return (
 		<div className='hero'>
 			<div className='hero__container container'>
-				{' '}
-				<div className='hero__line'></div>
 				<div className='hero__wrapper'>
 					<div className='hero__body'>
 						<h1 className='hero__title title'>Исторические даты</h1>
