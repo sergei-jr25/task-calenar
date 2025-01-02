@@ -2,8 +2,6 @@ import { IBuildOptions } from '../types/types'
 import { removeDataTestIdBabelPlugin } from './removeDataTestIdBabelPlugin'
 
 export function buildBabelLoader({ mode }: IBuildOptions) {
-	const isDev = mode === 'development'
-
 	return {
 		test: /\.tsx?$/,
 		exclude: /node_modules/,
@@ -16,7 +14,7 @@ export function buildBabelLoader({ mode }: IBuildOptions) {
 					[
 						'@babel/preset-react',
 						{
-							runtime: isDev ? 'automatic' : 'classic',
+							runtime: 'automatic',
 						},
 					],
 				],

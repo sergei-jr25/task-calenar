@@ -1,0 +1,485 @@
+$mobile: 767px;
+$tablet: 992px;
+$primaryOverlay: #42567a;
+$colorWhite: #fff;
+$primaryOverlayOpacity: #42567a6c;
+
+.hero {
+	height: 100vh;
+	@media (max-width: $mobile) {
+		padding: 40px 0;
+	}
+	&__container {
+		position: relative;
+		height: 100%;
+
+		max-width: 1460px;
+		margin: 0px auto;
+		padding: 0 20px;
+		@media (min-width: 1700px) {
+			padding: 170px 0px 104px 0px;
+		}
+		@media (min-width: $mobile) {
+			border-right: 1px solid $primaryOverlayOpacity;
+			border-left: 1px solid $primaryOverlayOpacity;
+			padding: 50px 0px;
+		}
+	}
+
+	&__wrapper {
+		height: 100%;
+		@media (min-width: $mobile) {
+			padding: 0px 40px 0px 75px;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				z-index: 2;
+				width: 5px;
+				height: 120px;
+				top: 0;
+				left: 0;
+				background: rgb(56, 119, 238);
+				background: linear-gradient(
+					-120deg,
+					rgba(56, 119, 238, 1) 0%,
+					rgba(239, 93, 168, 1) 100%
+				);
+			}
+		}
+		@media (max-width: $mobile) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__body {
+		position: relative;
+		margin: 0px 0px 90px 0px;
+
+		@media (min-width: $tablet) {
+			display: flex;
+		}
+		@media (max-width: $mobile) {
+			padding: 0px 0px 57px 0px;
+			margin: 0px 0px 20px 0px;
+			border-bottom: 1px solid #c7cdd9;
+		}
+	}
+	&__title {
+		font-size: 56px;
+
+		font-weight: 700;
+		color: $primaryOverlay;
+		max-width: 360px;
+
+		@media (min-width: $tablet) {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+		@media (max-width: 1202px) {
+			font-size: 43px;
+		}
+		@media (max-width: $tablet) {
+			margin: 0px 0px 35px 0px;
+		}
+		@media (max-width: $mobile) {
+			margin: 0px 0px 56px 0px;
+		}
+	}
+
+	&__line {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: 2;
+			display: block;
+			width: 1px;
+			height: 100%;
+			top: 0;
+			left: 50%;
+			background-color: $primaryOverlayOpacity;
+			transform: translate(20px, 0);
+		}
+		&::before {
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			transform: translate(0px, -50px);
+			@media (max-width: $tablet) {
+				transform: translate(0px, 59px);
+			}
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__content {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__items {
+		@media (max-width: $mobile) {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__arrows {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		width: 100%;
+
+		bottom: 0;
+		left: 0;
+		@media (min-width: 1700px) {
+			position: absolute;
+		}
+		@media (max-width: $tablet) {
+			justify-content: center;
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+
+	&__footer {
+		display: flex;
+		gap: 39px;
+		align-items: center;
+		@media (max-width: $mobile) {
+			// flex: 1 1 auto;
+		}
+	}
+}
+
+.content-hero {
+	&__range {
+		font-size: 160px;
+		line-height: 200px;
+		font-weight: 700;
+		display: flex;
+		gap: 135px;
+		align-items: center;
+		span {
+			&:nth-child(1) {
+				color: #0003ccaf;
+			}
+			&:nth-child(2) {
+				color: #e23fe2be;
+			}
+		}
+
+		@media (max-width: $tablet) {
+			font-size: 100px;
+			gap: 90px;
+			line-height: 130px;
+
+			transform: translate(-50%, -50%);
+		}
+		@media (min-width: $mobile) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -65%);
+		}
+		@media (max-width: $mobile) {
+			transform: translate(0px, 0px);
+			font-size: 56px;
+			line-height: 72px;
+			gap: 20px;
+		}
+	}
+}
+
+.circle {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	flex: 0 0 500px;
+	margin: 50px auto;
+
+	// &::before,
+	// &::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	z-index: 2;
+	// 	display: block;
+	// 	width: 1px;
+	// 	height: 4000px;
+	// 	top: 0;
+	// 	left: 50%;
+	// 	transform: translate(0px, -50%);
+	// 	background-color: $primaryOverlayOpacity;
+	// }
+	// &::before {
+	// 	top: 50%;
+	// 	left: 0;
+	// 	width: 4000px;
+	// 	height: 1px;
+	// 	transform: translate(-50%, 0px);
+
+	// 	@media (max-width: $tablet) {
+	// 	}
+	// }
+	@media (max-width: $mobile) {
+		display: none;
+	}
+
+	@media (max-width: $mobile) {
+		display: none;
+	}
+
+	&__body {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		transition: transform 0.5s ease-in-out;
+		border: 1px solid #42567a69;
+	}
+}
+.point-circle {
+	position: absolute;
+	top: 50%;
+	color: $primaryOverlay;
+
+	left: 50%;
+	width: 6px;
+	height: 6px;
+	flex: 0 0 6px;
+	background-color: $primaryOverlay;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-size: 0;
+	box-shadow: 0 0 0 0.15px $primaryOverlay;
+	transition: border-color 0.3s ease, transform 0.3s;
+
+	&:hover {
+		font-size: 2.15px;
+
+		z-index: 3;
+		background-color: transparent;
+		background-color: $colorWhite;
+
+		span {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: $primaryOverlay;
+		}
+	}
+
+	&_active {
+		font-size: 2.15px;
+		z-index: 3;
+		background-color: transparent;
+		background-color: $colorWhite;
+
+		span {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__text {
+		position: absolute;
+		z-index: 4;
+		top: 0;
+		left: 0;
+		font-weight: 700;
+	}
+}
+.arrows-hero {
+	&__actions {
+		display: flex;
+		gap: 10px;
+	}
+	&__count {
+		font-size: 14px;
+		line-height: 18px;
+		color: $primaryOverlay;
+		margin: 0px 0px 14px 0px;
+		@media (max-width: $mobile) {
+			font-size: 14px;
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__arrow {
+		position: relative;
+		z-index: 5;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		cursor: pointer;
+		border: 1px solid $primaryOverlay;
+		transition: transform 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		&_prev {
+			svg {
+				transform: rotate(-180deg);
+			}
+		}
+		svg {
+			path {
+				fill: $primaryOverlay !important;
+			}
+		}
+
+		@media (max-width: $mobile) {
+			gap: 8.3px;
+			width: 25px;
+			height: 25px;
+
+			svg {
+				width: 11px !important;
+				height: 22px !important;
+				path {
+				}
+			}
+		}
+
+		&:disabled {
+			border: 1px solid #42567a6b;
+			svg {
+				path {
+					fill: #42567a65 !important;
+				}
+			}
+		}
+	}
+}
+
+.events {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease 0s, visibility 0.3s;
+
+	&_active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (max-width: $mobile) {
+		margin: 0px 0px 78px 0px;
+		.swiper-slide:not(.swiper-slide-active) {
+			opacity: 0.5;
+			transform: scale(0.9);
+		}
+	}
+	&__slide {
+		cursor: pointer;
+	}
+}
+.sven .swiper {
+	position: relative;
+}
+
+.dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 10px;
+	&__item {
+		background-color: $primaryOverlay;
+		width: 6px;
+		height: 6px;
+		flex: 0 0 6px;
+		border-radius: 50%;
+
+		&_active {
+			background-color: $primaryOverlay;
+		}
+	}
+}
+.arrows-events {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 0;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transform: translate(0px, -50%);
+
+	&_arrow {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: $primaryOverlay;
+		cursor: pointer;
+		background-color: $colorWhite;
+		transition: opacity 0.3s ease 0s, visibility 0.3s, transform 0.3s;
+		svg {
+			width: 20px !important;
+			height: 20px !important;
+			path {
+				fill: #3877ee !important;
+			}
+		}
+
+		&:disabled {
+			opacity: 0;
+			visibility: hidden;
+		}
+		&:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	&_next {
+	}
+
+	&_prev {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+	@media (max-width: $mobile) {
+		display: none;
+	}
+}

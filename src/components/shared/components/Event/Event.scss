@@ -1,0 +1,12 @@
+.event {
+	line-height: 30px;
+	&__time {
+		font-size: 25px;
+
+		color: #3877ee;
+		margin: 0px 0px 15px 0px;
+	}
+	&__title {
+		font-size: 20px;
+	}
+}

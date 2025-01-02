@@ -20,6 +20,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
     "@svgr/webpack": "^8.1.0",
     "@types/babel__core": "^7.20.5",
+    "@types/glob": "^8.1.0",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -43,11 +44,13 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@fontsource/pt-sans": "^5.1.1",
     "@types/webpack-bundle-analyzer": "^4.7.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.0",
+    "swiper": "^11.1.15",
     "uninstall": "^0.0.0",
     "webpack-bundle-analyzer": "^4.10.1"
   },

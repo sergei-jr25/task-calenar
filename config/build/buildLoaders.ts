@@ -10,6 +10,9 @@ export function buildLoaders(options: IBuildOptions): ModuleOptions['rules'] {
 	const imagesLoader = {
 		test: /\.(png|jpg|jpeg|gif)$/i,
 		type: 'asset/resource',
+		generator: {
+			filename: 'images/[name][ext]', // указывает, что изображения будут сохранены в папке images
+		},
 	}
 
 	const svgLoader = {
@@ -17,22 +20,44 @@ export function buildLoaders(options: IBuildOptions): ModuleOptions['rules'] {
 		issuer: /\.[jt]sx?$/,
 		use: ['@svgr/webpack'],
 	}
+	const cssLoader = {
+		test: /\.css$/i,
+		use: [
+			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+			'css-loader', // обрабатываем CSS файлы
+		],
+	}
 
 	const scssLoader = {
 		test: /\.s[ac]ss$/i,
-		use: [
-			isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+		oneOf: [
 			{
-				loader: 'css-loader',
-				options: {
-					modules: {
-						localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
+				test: /\.module\.s[ac]ss$/i,
+				use: [
+					isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							modules: {
+								localIdentName: isDev
+									? '[path][name]__[local]'
+									: '[hash:base64:8]',
+							},
+						},
 					},
-				},
+					'sass-loader',
+				],
 			},
-			'sass-loader',
+			{
+				use: [
+					isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+					'css-loader',
+					'sass-loader',
+				],
+			},
 		],
 	}
+
 	const tsLoader = {
 		// ts loader умеет работать с jsx
 		// без использовния тайп скрипт: нужен был бы babel loader
@@ -58,7 +83,7 @@ export function buildLoaders(options: IBuildOptions): ModuleOptions['rules'] {
 		// порядок имеет значение
 		imagesLoader,
 		scssLoader,
-		// tsLoader,
+		cssLoader,
 		babelLoader,
 		svgLoader,
 	]
